@@ -112,11 +112,38 @@ Date values are `YYYY-MM-DD`, `C` (Current), or `U` (Unavailable).
 
 ## Automation
 
-The scheduled GitHub Actions cron has been **removed**: travel.state.gov's
-Cloudflare protection blocks automated scraping from GitHub's datacenter IPs, so
-the scheduled runs only failed. Bulletins are now scraped locally with a real
-browser — run `npm run scrape:local` on your own machine during the publish
-window (typically the 10th–20th), then commit the new files under `data/`.
+GitHub Actions **cannot** be used: travel.state.gov is behind Cloudflare bot
+protection, which blocks automated scraping from any datacenter IP (including
+GitHub runners) and even from headless/automated browsers. The only thing that
+reliably passes is a real, headed Chrome. So scraping runs **locally on a Mac**,
+driven by a `launchd` agent.
 
-The `.github/workflows/scrape.yml` workflow is kept for manual `workflow_dispatch`
-runs only, but note those also hit the Cloudflare wall.
+**What it does:** `scripts/auto-scrape.sh` runs on days 10–20 (twice daily),
+scrapes via `scrape:local`, and if a new bulletin appears it commits to a branch,
+opens a PR with `gh`, and auto-merges it. Most days the bulletin isn't published
+yet, so the run exits quietly; once it's saved, later runs skip before any
+network request. Failures send a Slack message (Cloudflare failures are called
+out specifically, since they usually mean the clearance cookie expired and you
+need to run `npm run scrape:local` once by hand to re-solve the checkbox).
+
+### One-time setup
+
+1. **Authenticate `gh`** (separate from your git/SSH login — required to open PRs):
+   ```bash
+   gh auth login
+   ```
+2. **Slack notifications** (optional): create an [Incoming Webhook](https://api.slack.com/messaging/webhooks)
+   for your channel and save the URL (git-ignored):
+   ```bash
+   echo 'https://hooks.slack.com/services/XXX/YYY/ZZZ' > local/slack-webhook.txt
+   ```
+3. **Install the launchd agent:**
+   ```bash
+   cp scripts/com.visabulletin.autoscrape.plist ~/Library/LaunchAgents/
+   launchctl load ~/Library/LaunchAgents/com.visabulletin.autoscrape.plist
+   ```
+   Test it immediately with `launchctl start com.visabulletin.autoscrape`, then
+   check `local/auto-scrape.log`.
+
+Logs and the Slack webhook live under `local/` (git-ignored). To stop the
+automation: `launchctl unload ~/Library/LaunchAgents/com.visabulletin.autoscrape.plist`.
