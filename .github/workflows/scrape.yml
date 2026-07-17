@@ -1,21 +1,13 @@
 name: Scrape Visa Bulletin
 
 on:
-  # Monthly cron: 10th-20th of each month at 12:00 UTC
-  schedule:
-    - cron: "0 12 10 * *"
-    - cron: "0 12 11 * *"
-    - cron: "0 12 12 * *"
-    - cron: "0 12 13 * *"
-    - cron: "0 12 14 * *"
-    - cron: "0 12 15 * *"
-    - cron: "0 12 16 * *"
-    - cron: "0 12 17 * *"
-    - cron: "0 12 18 * *"
-    - cron: "0 12 19 * *"
-    - cron: "0 12 20 * *"
-
-  # Manual trigger for backfill or ad-hoc scrape
+  # NOTE: The scheduled cron has been removed. travel.state.gov is now behind
+  # Cloudflare bot protection, which blocks automated scraping from GitHub's
+  # datacenter IPs (returns 403 / interactive challenge). Scheduled runs here
+  # only failed and sent alert emails. Bulletins are now scraped locally with a
+  # real browser — run `npm run scrape:local` on your own machine, then commit.
+  # This workflow is kept for manual (workflow_dispatch) runs only; note those
+  # will also fail against Cloudflare unless run from a trusted browser session.
   workflow_dispatch:
     inputs:
       mode:

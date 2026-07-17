@@ -174,19 +174,31 @@ function parseTable(
 }
 
 /**
- * Fetch and parse a visa bulletin page into structured data.
+ * Default HTML fetcher: plain HTTP request.
+ * NOTE: travel.state.gov is now behind Cloudflare bot protection, which returns
+ * 403 to plain HTTP clients. Use the browser-based fetcher (see browser-fetch.ts,
+ * `npm run scrape:local`) to actually pass the challenge.
  */
-export async function scrapeBulletin(
-  year: number,
-  month: number,
-): Promise<BulletinData> {
-  const url = buildBulletinUrl(year, month);
+async function fetchHtmlPlain(url: string): Promise<string> {
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
   }
+  return response.text();
+}
 
-  const html = await response.text();
+/**
+ * Fetch and parse a visa bulletin page into structured data.
+ * @param fetchHtml Optional HTML fetcher; defaults to a plain HTTP request.
+ *                  Pass a browser-based fetcher to bypass Cloudflare.
+ */
+export async function scrapeBulletin(
+  year: number,
+  month: number,
+  fetchHtml: (url: string) => Promise<string> = fetchHtmlPlain,
+): Promise<BulletinData> {
+  const url = buildBulletinUrl(year, month);
+  const html = await fetchHtml(url);
   return parseBulletinHtml(html);
 }
 

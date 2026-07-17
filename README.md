@@ -55,11 +55,27 @@ npm install
 
 ## Usage
 
-**Scrape the latest bulletin:**
+**Scrape the latest bulletin (local, real browser — recommended):**
 
 ```bash
-npm run scrape
+npm run scrape:local
 ```
+
+travel.state.gov is behind Cloudflare bot protection, so the plain-HTTP
+`npm run scrape` gets a 403 and no longer works (including from CI). `scrape:local`
+drives a real Chrome (via Playwright, `channel: "chrome"`) using a dedicated
+profile at `~/.cache/visa-bulletin-chrome` to pass the challenge:
+
+- Requires Google Chrome installed.
+- A Chrome window opens. The **first** run may show a "Verify you are human"
+  checkbox — click it once; the clearance cookie is saved to the profile, so
+  later runs usually pass automatically.
+- Once a month's bulletin is saved, re-running skips it before any network
+  request — safe to run repeatedly during the publish window.
+- After a successful scrape, commit and push the changes under `data/`.
+
+Set `SCRAPE_CHALLENGE_TIMEOUT_MS` (default `120000`) to allow more time to click
+the checkbox on the first run.
 
 **Backfill the last 36 months:**
 
@@ -96,6 +112,11 @@ Date values are `YYYY-MM-DD`, `C` (Current), or `U` (Unavailable).
 
 ## Automation
 
-GitHub Actions runs daily from the 10th to 20th of each month at 12:00 UTC, covering the typical visa bulletin publication window. When a new bulletin is found, the scraper saves JSON files and commits them to the repo automatically.
+The scheduled GitHub Actions cron has been **removed**: travel.state.gov's
+Cloudflare protection blocks automated scraping from GitHub's datacenter IPs, so
+the scheduled runs only failed. Bulletins are now scraped locally with a real
+browser — run `npm run scrape:local` on your own machine during the publish
+window (typically the 10th–20th), then commit the new files under `data/`.
 
-Manual runs are also supported via `workflow_dispatch` with `scrape` or `backfill` mode.
+The `.github/workflows/scrape.yml` workflow is kept for manual `workflow_dispatch`
+runs only, but note those also hit the Cloudflare wall.
