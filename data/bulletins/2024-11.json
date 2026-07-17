@@ -1,0 +1,230 @@
+{
+  "id": "2024-11",
+  "bulletin_date": "2024-11",
+  "published_date": null,
+  "data": {
+    "employmentBased": {
+      "finalActionDates": {
+        "EB-1": {
+          "allOther": "C",
+          "china": "2022-11-08",
+          "india": "2022-02-01",
+          "mexico": "C",
+          "philippines": "C"
+        },
+        "EB-2": {
+          "allOther": "2023-03-15",
+          "china": "2020-03-22",
+          "india": "2012-07-15",
+          "mexico": "2023-03-15",
+          "philippines": "2023-03-15"
+        },
+        "EB-3": {
+          "allOther": "2022-11-15",
+          "china": "2020-04-01",
+          "india": "2012-11-01",
+          "mexico": "2022-11-15",
+          "philippines": "2022-11-15"
+        },
+        "Other Workers": {
+          "allOther": "2020-12-01",
+          "china": "2017-01-01",
+          "india": "2012-11-01",
+          "mexico": "2020-12-01",
+          "philippines": "2020-12-01"
+        },
+        "EB-4": {
+          "allOther": "2021-01-01",
+          "china": "2021-01-01",
+          "india": "2021-01-01",
+          "mexico": "2021-01-01",
+          "philippines": "2021-01-01"
+        },
+        "Certain Religious Workers": {
+          "allOther": "2021-01-01",
+          "china": "2021-01-01",
+          "india": "2021-01-01",
+          "mexico": "2021-01-01",
+          "philippines": "2021-01-01"
+        },
+        "EB-5 Unreserved": {
+          "allOther": "C",
+          "china": "2016-07-15",
+          "india": "2022-01-01",
+          "mexico": "C",
+          "philippines": "C"
+        },
+        "EB-5 Set Aside: Rural": {
+          "allOther": "C",
+          "china": "C",
+          "india": "C",
+          "mexico": "C",
+          "philippines": "C"
+        },
+        "EB-5 Set Aside: High Unemployment": {
+          "allOther": "C",
+          "china": "C",
+          "india": "C",
+          "mexico": "C",
+          "philippines": "C"
+        },
+        "EB-5 Set Aside: Infrastructure": {
+          "allOther": "C",
+          "china": "C",
+          "india": "C",
+          "mexico": "C",
+          "philippines": "C"
+        }
+      },
+      "datesForFiling": {
+        "EB-1": {
+          "allOther": "C",
+          "china": "2023-01-01",
+          "india": "2022-04-15",
+          "mexico": "C",
+          "philippines": "C"
+        },
+        "EB-2": {
+          "allOther": "2023-08-01",
+          "china": "2020-10-01",
+          "india": "2013-01-01",
+          "mexico": "2023-08-01",
+          "philippines": "2023-08-01"
+        },
+        "EB-3": {
+          "allOther": "2023-03-01",
+          "china": "2020-11-15",
+          "india": "2013-06-08",
+          "mexico": "2023-03-01",
+          "philippines": "2023-03-01"
+        },
+        "Other Workers": {
+          "allOther": "2021-05-22",
+          "china": "2018-01-01",
+          "india": "2013-06-08",
+          "mexico": "2021-05-22",
+          "philippines": "2021-05-22"
+        },
+        "EB-4": {
+          "allOther": "2021-02-01",
+          "china": "2021-02-01",
+          "india": "2021-02-01",
+          "mexico": "2021-02-01",
+          "philippines": "2021-02-01"
+        },
+        "Certain Religious Workers": {
+          "allOther": "2021-02-01",
+          "china": "2021-02-01",
+          "india": "2021-02-01",
+          "mexico": "2021-02-01",
+          "philippines": "2021-02-01"
+        },
+        "EB-5 Unreserved": {
+          "allOther": "C",
+          "china": "2016-10-01",
+          "india": "2022-04-01",
+          "mexico": "C",
+          "philippines": "C"
+        },
+        "EB-5 Set Aside: Rural": {
+          "allOther": "C",
+          "china": "C",
+          "india": "C",
+          "mexico": "C",
+          "philippines": "C"
+        },
+        "EB-5 Set Aside: High Unemployment": {
+          "allOther": "C",
+          "china": "C",
+          "india": "C",
+          "mexico": "C",
+          "philippines": "C"
+        },
+        "EB-5 Set Aside: Infrastructure": {
+          "allOther": "C",
+          "china": "C",
+          "india": "C",
+          "mexico": "C",
+          "philippines": "C"
+        }
+      }
+    },
+    "familyBased": {
+      "finalActionDates": {
+        "F1": {
+          "allOther": "2015-10-22",
+          "china": "2015-10-22",
+          "india": "2015-10-22",
+          "mexico": "2004-11-22",
+          "philippines": "2012-03-01"
+        },
+        "F2A": {
+          "allOther": "2022-01-01",
+          "china": "2022-01-01",
+          "india": "2022-01-01",
+          "mexico": "2021-04-15",
+          "philippines": "2022-01-01"
+        },
+        "F2B": {
+          "allOther": "2016-05-01",
+          "china": "2016-05-01",
+          "india": "2016-05-01",
+          "mexico": "2005-07-01",
+          "philippines": "2011-10-22"
+        },
+        "F3": {
+          "allOther": "2010-04-15",
+          "china": "2010-04-15",
+          "india": "2010-04-15",
+          "mexico": "2000-10-22",
+          "philippines": "2002-09-08"
+        },
+        "F4": {
+          "allOther": "2007-08-01",
+          "china": "2007-08-01",
+          "india": "2006-03-08",
+          "mexico": "2001-03-01",
+          "philippines": "2004-02-01"
+        }
+      },
+      "datesForFiling": {
+        "F1": {
+          "allOther": "2017-09-01",
+          "china": "2017-09-01",
+          "india": "2017-09-01",
+          "mexico": "2005-10-01",
+          "philippines": "2015-04-22"
+        },
+        "F2A": {
+          "allOther": "2024-07-15",
+          "china": "2024-07-15",
+          "india": "2024-07-15",
+          "mexico": "2024-07-15",
+          "philippines": "2024-07-15"
+        },
+        "F2B": {
+          "allOther": "2017-01-01",
+          "china": "2017-01-01",
+          "india": "2017-01-01",
+          "mexico": "2006-07-01",
+          "philippines": "2013-10-01"
+        },
+        "F3": {
+          "allOther": "2012-04-22",
+          "china": "2012-04-22",
+          "india": "2012-04-22",
+          "mexico": "2001-06-15",
+          "philippines": "2004-05-08"
+        },
+        "F4": {
+          "allOther": "2008-03-01",
+          "china": "2008-03-01",
+          "india": "2006-08-01",
+          "mexico": "2001-04-30",
+          "philippines": "2007-07-22"
+        }
+      }
+    }
+  },
+  "created_at": "2026-03-08T23:39:00.170Z"
+}
