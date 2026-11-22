@@ -1,5 +1,5 @@
 {
- "as_of": "2026-10-19",
+ "as_of": "2026-11-20",
  "coverage": {
   "by_form": {
    "I-130": 12,
@@ -9,14 +9,14 @@
   },
   "triples": 216
  },
- "generated_at": "2026-11-19T15:40:07Z",
- "latest_sha256": "84f871b60c832fe362b49518bc9bb85daed0ae6d72c361a7fa2296e60667389b",
+ "generated_at": "2026-11-22T15:40:07Z",
+ "latest_sha256": "17f5893d78ce8a094ee62c6bd2c4426cdd243f942a55b1c7503abc9189121348",
  "notes": {
   "service_request_date": "NOT used by the app in 1.3. The source's value is systematically 1 day earlier than a baseline snapshot (INV-002, 2026-10-13) and which side is right is unresolved.",
   "units": "All ranges are in months as normalized by the source; original units are not preserved."
  },
  "offices_sha256": "e7ef5bdd66a26746c97928cfda284ca25926ab8b02a4377eae291678a4de4ee7",
- "publication_date_max": "2026-10-19",
+ "publication_date_max": "2026-11-20",
  "schema_version": 1,
  "source": {
   "api": "https://immigrationtimes.org/api/v1/",
@@ -28,5 +28,5 @@
   "url": "https://immigrationtimes.org/data/"
  },
  "tool_version": 1,
- "upstream_generated_at": "2026-11-19T14:17:05.566Z"
+ "upstream_generated_at": "2026-11-22T14:17:03.674Z"
 }
